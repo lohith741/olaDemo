@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "19c44a97-4f00-4c64-a63d-dbd066ab601b",
+		"name": "OlaAPICollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/ola/request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/ola/request",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ola",
+						"request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/ola/driver/selectRequest?requestId=11&driverId=2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/ola/driver/selectRequest?requestId=11&driverId=2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ola",
+						"driver",
+						"selectRequest"
+					],
+					"query": [
+						{
+							"key": "requestId",
+							"value": "11"
+						},
+						{
+							"key": "driverId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/ola/driver/2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/ola/driver/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ola",
+						"driver",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/ola/customer/25",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/ola/customer/25",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ola",
+						"customer",
+						"25"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
