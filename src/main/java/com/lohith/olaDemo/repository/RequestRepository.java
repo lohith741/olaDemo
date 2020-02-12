@@ -12,19 +12,19 @@ import com.lohith.olaDemo.model.Request;
 @Repository
 public interface RequestRepository extends JpaRepository<Request,Long>{
 
-	@Query(value = "SELECT * FROM request_db  WHERE  req_status = 'waiting'", nativeQuery = true)
+	@Query(value = "SELECT * FROM request_db  WHERE  request_status = 'waiting'", nativeQuery = true)
 	List<Request> findAllWaiting();
 
-	@Query(value = "SELECT * FROM request_db  WHERE  req_status = 'completed' AND dri_id = ?1", nativeQuery = true)
+	@Query(value = "SELECT * FROM request_db  WHERE  request_status = 'completed' AND driver_id = ?1", nativeQuery = true)
 	List<Request> findAllCompleted(Long driverId);
 	
-	@Query(value = "SELECT * FROM request_db  WHERE  req_status = 'ongoing' AND dri_id = ?1", nativeQuery = true)
+	@Query(value = "SELECT * FROM request_db  WHERE  request_status = 'ongoing' AND driver_id = ?1", nativeQuery = true)
 	List<Request> findAllonGoingByDriver(Long driverId);
 	
-	@Query(value = "SELECT * FROM request_db  WHERE  req_status = 'ongoing'", nativeQuery = true)
-	List<Request> findAllonGoing();
+	@Query(value = "SELECT * FROM request_db  WHERE  request_status = 'ongoing'", nativeQuery = true)
+	List<Request> findAllOnGoing();
 	
-	@Query(value = "SELECT * FROM request_db  WHERE  requestId = ?1", nativeQuery = true)
+	@Query(value = "SELECT * FROM request_db  WHERE  request_id = ?1", nativeQuery = true)
 	List<Request> getRequestById(Long requestId);
 
 }

@@ -1,9 +1,11 @@
 package com.lohith.olaDemo.repository;
 
+import org.springframework.stereotype.Repository;
+
+@Repository
 public interface RefreshRepository {
 
-	void refreshOngoingRequests();
+	public void refreshOngoingRequests();
 	
-	void refreshWaitingRequests();
-
 }
+ 
