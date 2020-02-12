@@ -19,6 +19,9 @@ public interface RequestRepository extends JpaRepository<Request,Long>{
 	List<Request> findAllCompleted(Long driverId);
 	
 	@Query(value = "SELECT * FROM request_db  WHERE  req_status = 'ongoing' AND dri_id = ?1", nativeQuery = true)
-	List<Request> findAllonGoing(Long driverId);
+	List<Request> findAllonGoingByDriver(Long driverId);
+	
+	@Query(value = "SELECT * FROM request_db  WHERE  req_status = 'ongoing'", nativeQuery = true)
+	List<Request> findAllonGoing();
 
 }
