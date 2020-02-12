@@ -23,5 +23,8 @@ public interface RequestRepository extends JpaRepository<Request,Long>{
 	
 	@Query(value = "SELECT * FROM request_db  WHERE  req_status = 'ongoing'", nativeQuery = true)
 	List<Request> findAllonGoing();
+	
+	@Query(value = "SELECT * FROM request_db  WHERE  requestId = ?1", nativeQuery = true)
+	List<Request> getRequestById(Long requestId);
 
 }

@@ -32,18 +32,20 @@ public class RequestRepositoryServiceImpl implements RefreshRepository{
 			if(diffMinutes>5){
 				request.setRequestStatus("completed");
 				requestRepository.save(request);
+				
+				Driver driver= driverRepository.getDriverById(request.getDriverId()).get(0);
+				driver.setDriverStatus(true);
+				driverRepository.save(driver);
 			}
-			
+		
+					
 		});
 		
 	}
 
 	@Override
 	public void refreshWaitingRequests() {
-		// TODO Auto-generated method stub
-		List<Driver> drivers =driverRepository.getAllDrivers();
-		List<Request> requests =requestRepository.findAllWaiting();
-		
+
 		
 	}
 

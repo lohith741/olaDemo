@@ -13,6 +13,9 @@ import com.lohith.olaDemo.model.Request;
 public interface DriverRepository extends JpaRepository<Driver,Long>{
 
 	
-	@Query(value = "SELECT * FROM driver_db'", nativeQuery = true)
+	@Query(value = "SELECT * FROM driver_db", nativeQuery = true)
 	List<Driver> getAllDrivers();
+	
+	@Query(value = "SELECT * FROM driver_db where driverId= ?1 ", nativeQuery = true)
+	List<Driver> getDriverById(Long driverId);
 }
