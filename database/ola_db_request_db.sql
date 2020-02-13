@@ -29,8 +29,10 @@ CREATE TABLE `request_db` (
   `driver_id` bigint(20) DEFAULT NULL,
   `request_status` varchar(255) DEFAULT NULL,
   `request_time` datetime NOT NULL,
+  `x` int(11) NOT NULL,
+  `y` int(11) NOT NULL,
   PRIMARY KEY (`request_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +41,7 @@ CREATE TABLE `request_db` (
 
 LOCK TABLES `request_db` WRITE;
 /*!40000 ALTER TABLE `request_db` DISABLE KEYS */;
-INSERT INTO `request_db` VALUES (11,'2020-02-12 21:43:48',1,1,'completed','2020-02-12 21:43:07'),(12,'2020-02-12 21:44:18',2,3,'completed','2020-02-12 21:43:11'),(13,'2020-02-12 22:03:11',3,1,'completed','2020-02-12 21:43:15'),(14,'2020-02-12 21:44:04',4,2,'completed','2020-02-12 21:43:18'),(15,'2020-02-12 22:03:39',4,4,'completed','2020-02-12 21:43:21'),(16,NULL,22,NULL,'waiting','2020-02-12 22:25:15'),(17,NULL,25,NULL,'waiting','2020-02-12 22:40:48');
+INSERT INTO `request_db` VALUES (1,'2020-02-13 15:21:09',23,1,'completed','2020-02-13 14:37:31',2,3),(2,'2020-02-13 15:22:06',23,2,'completed','2020-02-13 14:43:25',3,3),(3,'2020-02-13 15:22:58',56,3,'completed','2020-02-13 14:43:34',3,3),(4,'2020-02-13 15:23:42',4,4,'completed','2020-02-13 15:23:30',2,5),(5,'2020-02-13 15:27:02',5,5,'completed','2020-02-13 15:24:58',2,5),(6,'2020-02-13 15:32:28',1,1,'completed','2020-02-13 15:32:21',2,5),(7,'2020-02-13 18:47:51',1,1,'completed','2020-02-13 18:33:52',1,1),(8,'2020-02-13 18:49:39',9,3,'completed','2020-02-13 18:34:29',2,1),(9,'2020-02-13 19:21:19',12,5,'completed','2020-02-13 18:47:31',4,5),(10,'2020-02-13 19:21:31',12,4,'completed','2020-02-13 19:18:54',3,5),(11,NULL,23,NULL,'waiting','2020-02-13 19:19:34',5,5),(12,NULL,24,NULL,'waiting','2020-02-13 19:19:50',4,1);
 /*!40000 ALTER TABLE `request_db` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-02-13  4:19:10
+-- Dump completed on 2020-02-14  1:51:28
