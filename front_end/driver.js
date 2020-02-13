@@ -127,6 +127,6 @@ function showDiv() {
 
     $("#driver_board").html("");
 
-
+    setTimeout(showDiv, 2000);
    // location.reload(true)
  }

@@ -85,18 +85,32 @@ public class OlaController {
 		return timeElapsed;
 	}
     
-    @PostMapping(path = "/customer/{id}" )
-    public ResponseEntity<?> createCustomerRequest(@PathVariable(value = "id") Long customerId) {
+    @PostMapping(path = "/customer/rideRequest" )
+    public ResponseEntity<?> createCustomerRequest(@RequestParam(value = "customerId") Long customerId,
+    		@RequestParam(value = "x") int x, @RequestParam(value = "y") int y) {
     	refreshRepository.refreshOngoingRequests();
+    	JSONObject response = new JSONObject();
+    	List<Request> waitingList = requestRepository.findAllWaiting();
+    	if(x>5 || x<1 || y>5 || y<1){
+    		response.put("message", "Sorry, Unserviceble area");
+    	}
+    	else{
+    	if(waitingList.size()<10){
         Date dateobj = new Date();
     	Request request = new Request();
     	request.setCustomerId(customerId);
     	request.setRequestTime(dateobj);
     	request.setRequestStatus("waiting");
+    	request.setX(x);
+    	request.setY(y);
     	requestRepository.save(request);
-    	
-        JSONObject response = new JSONObject();
-        response.put("message", "Successfully Inserted!");
+    	        
+        response.put("message", "Successfully, Ride is on your way!");
+    	}
+    	else{
+    	response.put("message", "Sorry, Rides not available. try again later!");
+    	}
+    	}
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
     

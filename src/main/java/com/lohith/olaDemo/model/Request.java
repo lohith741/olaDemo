@@ -33,6 +33,12 @@ public class Request {
 	public Long getRequestId() {
 		return requestId;
 	}
+	
+	@NotNull
+	public int x;
+	
+	@NotNull
+	public int y;
 
 	public Long getCustomerId() {
 		return customerId;
@@ -76,6 +82,22 @@ public class Request {
 
 	public void setAccpetedTime(Date accpetedTime) {
 		this.accpetedTime = accpetedTime;
+	}
+
+	public int getX() {
+		return x;
+	}
+
+	public int getY() {
+		return y;
+	}
+
+	public void setX(int x) {
+		this.x = x;
+	}
+
+	public void setY(int y) {
+		this.y = y;
 	}
 	
 
