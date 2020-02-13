@@ -115,6 +115,10 @@ function showDiv() {
         })
  }
 
+ window.setInterval(function(){
+    showDiv()
+ }, 5000);
+
  function select(id){
    console.log(id);
    driverid = $('#driver_id').val()

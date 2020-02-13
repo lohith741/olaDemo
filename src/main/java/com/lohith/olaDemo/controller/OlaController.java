@@ -156,12 +156,12 @@ public class OlaController {
     	List<Request> completedList = requestRepository.findAllCompleted(driverId);
     	List<Request> ongoingList = requestRepository.findAllonGoingByDriver(driverId);
     	
-    	
+    	List<Request> finalWaitingList=refreshRepository.getTopThreedrivers(driverId,waitingList);
     	List<DriverResponse> waitingResponse=new ArrayList<DriverResponse>();
     	List<DriverResponse> ongoingResponse=new ArrayList<DriverResponse>();
     	List<DriverResponse> completedResponse=new ArrayList<DriverResponse>();
     	
-    	waitingList.forEach(request->{
+    	finalWaitingList.forEach(request->{
     		DriverResponse driverResponse=new DriverResponse();
     		driverResponse.setRequestId(request.getRequestId());
     		driverResponse.setCustomerId(request.getCustomerId());
