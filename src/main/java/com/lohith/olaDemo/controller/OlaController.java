@@ -173,7 +173,7 @@ public class OlaController {
     		driverResponse.setRequestedTime(getTimeElapsed(request.getRequestTime()));
     		driverResponse.setPickedTime(getTimeElapsed(request.getAccpetedTime()));
     		int addMinuteTime = 5;
-    		Date targetTime = request.getRequestTime(); //now
+    		Date targetTime = request.getAccpetedTime(); //now
     		targetTime = DateUtils.addMinutes(targetTime, addMinuteTime);
     		driverResponse.setCompletedTime(getTimeElapsed(targetTime));
     		
