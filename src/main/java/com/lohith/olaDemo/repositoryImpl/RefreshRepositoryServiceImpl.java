@@ -16,7 +16,7 @@ import com.lohith.olaDemo.repository.RefreshRepository;
 import com.lohith.olaDemo.repository.RequestRepository;
 
 @Service
-public class RequestRepositoryServiceImpl implements RefreshRepository{
+public class RefreshRepositoryServiceImpl implements RefreshRepository{
 
 	@Autowired
 	RequestRepository requestRepository;
